@@ -46,28 +46,6 @@ app.MapControllers();
 app.MapFallbackToFile("/client/{*path:nonfile}", "client/browser/index.html");
 app.MapFallbackToFile("/admin/{*path:nonfile}", "admin/browser/index.html");
 
-app.Map("/client/{*any}", clientApp =>
-{
-    clientApp.Run(async context =>
-    {
-        context.Response.ContentType = "text/html";
-        await context.Response.SendFileAsync(
-            Path.Combine(builder.Environment.ContentRootPath, "wwwroot/client/browser/index.html")
-        );
-    });
-});
-
-app.Map("/admin/{*any}", adminApp =>
-{
-    adminApp.Run(async context =>
-    {
-        context.Response.ContentType = "text/html";
-        await context.Response.SendFileAsync(
-            Path.Combine(builder.Environment.ContentRootPath, "wwwroot/admin/browser/index.html")
-        );
-    });
-});
-
 app.MapGet("/", (context) =>
 {
     context.Response.Redirect("/client");

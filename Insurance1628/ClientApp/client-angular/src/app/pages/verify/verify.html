@@ -1,0 +1,26 @@
+<div class="container">
+
+  <h2>کد تایید</h2>
+
+  <p>کد ارسال شده به تلفن همراه خود را وارد نمایید.</p>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field appearance="outline">
+      <mat-label>کد تایید ۵ رقمی</mat-label>
+      <input matInput formControlName="code" type="text" maxlength="5" inputmode="numeric" />
+      <mat-error *ngIf="code?.invalid">
+        کد نامعتبر است
+      </mat-error>
+    </mat-form-field>
+
+    <div class="code-boxes">
+      <span *ngFor="let i of [0,1,2,3,4]">{{ code?.value?.charAt(i) || '_' }}</span>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+      تایید
+    </button>
+  </form>
+
+
+</div>

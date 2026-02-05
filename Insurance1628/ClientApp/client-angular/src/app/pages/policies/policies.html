@@ -1,0 +1,7 @@
+<h2>سوابق بیمه‌نامه‌های شما</h2>
+
+<mat-list>
+  <mat-list-item *ngFor="let p of policies">
+    {{ p.name }} - {{ p.date }}
+  </mat-list-item>
+</mat-list>

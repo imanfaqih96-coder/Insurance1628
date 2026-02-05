@@ -21,6 +21,9 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "../../wwwroot/client",
+            "baseHref": "/client/",
+            "deployUrl": "/client/browser/",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",

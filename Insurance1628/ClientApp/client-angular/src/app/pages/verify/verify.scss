@@ -1,0 +1,22 @@
+.otp-boxes {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+
+  span {
+    width: 45px;
+    height: 55px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    border-radius: 6px;
+  }
+}
+
+input.otp {
+  opacity: 0;
+  position: absolute;
+}
