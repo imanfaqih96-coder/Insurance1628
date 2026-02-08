@@ -5,34 +5,71 @@
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
-
-html {
-  height: 100%;
-  @include mat.theme((
-    color: (
-      primary: mat.$cyan-palette,
-      tertiary: mat.$orange-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
-}
+@use 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@use 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default' as owl-theme;
 
 body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
-  color-scheme: light;
-
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
-  margin: 0;
-  height: 100%;
+  font-family: 'IRANSans', sans-serif;
+  padding-top: 90px;
+  background: #ededed;
+  color: #333;
 }
-/* You can add global styles to this file, and also import other style files */
+
+header {
+  width: 100%;
+  position: fixed;
+  height: 60px;
+  background: #112e62;
+  color: #fff;
+  top: 0;
+}
+
+header .logo-holder{
+    width:60px;
+    height:60px;
+    float:right;
+    background:#ededed;
+}
+
+header .logo-holder img{
+    width:100% !important;
+}
+
+header .logo-title{
+    float:right;
+    padding-right:15px;
+    font-size:20px;
+    height:60px;
+    line-height:60px;
+    font-weight:700;
+}
+
+.text-warning{
+    color:#f32248 !important;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* ارتفاع دلخواه */
+  overflow: hidden;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+}
+
+.landing-content{
+    margin-top:15px;
+}
+
+owl-stage *{
+    direction:ltr !important;
+}

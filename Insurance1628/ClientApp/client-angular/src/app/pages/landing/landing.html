@@ -1,25 +1,31 @@
 <div class="container">
 
-  <h2>دریافت سوابق بیمه‌نامه</h2>
+  <owl-carousel-o [options]="customOptions" dir="ltr">
+    <ng-template carouselSlide><img src="/images/slider/bg1.jpg" /></ng-template>
+    <ng-template carouselSlide><img src="/images/slider/bg2.jpg" /></ng-template>
+  </owl-carousel-o>
 
-  <p>
-    لطفاً جهت مشاهده سوابق بیمه‌نامه‌های صادر شده به نام خود،
-    شماره تلفن همراهتان را در کادر زیر وارد نمایید.
-  </p>
+  <div class="landing-content">
+    <h2>دریافت سوابق بیمه‌نامه</h2>
 
-  <form [formGroup]="form" (ngSubmit)="submit()">
-    <mat-form-field appearance="outline" class="full">
-      <mat-label>شماره موبایل</mat-label>
-      <input matInput formControlName="mobile" type="tel" placeholder="مثال: 09123456789" />
-      <mat-error *ngIf="mobile?.invalid">
-        شماره موبایل معتبر نیست
-      </mat-error>
-    </mat-form-field>
+    <p>
+      لطفاً جهت مشاهده سوابق بیمه‌نامه‌های صادر شده به نام خود،
+      شماره تلفن همراهتان را در کادر زیر وارد نمایید.
+    </p>
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
-      دریافت کد
-    </button>
-  </form>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>شماره موبایل</mat-label>
+        <input matInput formControlName="mobile" type="tel" placeholder="مثال: 09123456789" maxlength="11" />
+        <mat-error *ngIf="mobile?.invalid" class="text-warning">
+          شماره موبایل معتبر نیست
+        </mat-error>
+      </mat-form-field>
 
+      <button mat-flat-button color="primary" type="submit" [disabled]="form.invalid">
+        دریافت کد
+      </button>
+    </form>
+  </div>
 
 </div>
